@@ -1,0 +1,15 @@
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2rem;
+  background-color: $primary-darker;
+  display: flex;
+  justify-content: space-between;
+
+  &__right{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+  }
+}

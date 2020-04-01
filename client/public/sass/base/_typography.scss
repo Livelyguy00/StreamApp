@@ -1,0 +1,17 @@
+body{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: $light-grey;
+  line-height: 1.7;
+}
+
+.heading-secondary{
+  &,&:link, &:visited{
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $light-grey;
+    letter-spacing: 2px;
+  } 
+
+}
