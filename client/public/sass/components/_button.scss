@@ -9,6 +9,7 @@
     text-decoration: none;
     box-shadow: 0 0.5rem 2rem rgba($black, .2);
     transition: all .2s;
+    border: none;
   }
 
   &--primary{
@@ -19,5 +20,6 @@
   &:active{
     transform: translateY(-0.5rem);
     box-shadow: 0 1rem 2rem rgba($black, .3);
+    cursor: pointer;
   }
 }

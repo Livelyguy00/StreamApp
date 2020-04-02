@@ -7,6 +7,10 @@
   display: flex;
   justify-content: space-between;
 
+  &__left{
+    height: auto;
+  }
+
   &__right{
     width: 30%;
     display: flex;

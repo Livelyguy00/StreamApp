@@ -1,0 +1,14 @@
+.loading-box{
+  display: flex;
+  align-items: center;
+
+  &__loading{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10rem;
+    border: 2px dashed $primary;
+    animation: LoadingDot 1s linear infinite;
+    margin-right: 1rem;
+  }
+   
+}
