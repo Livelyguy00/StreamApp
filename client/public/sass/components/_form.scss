@@ -1,0 +1,24 @@
+.form{
+  font-size: 2rem;
+  width: 40%;
+
+  &__group{
+    display: flex;
+    width: 100%;
+    
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__label{
+    width: 50%;
+    text-align: right;
+    text-transform: uppercase;
+    margin-right: 1rem;
+  }
+
+  &__input{
+    width: 50%;
+  }
+}

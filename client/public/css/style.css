@@ -48,6 +48,10 @@ body {
     display: flex;
     justify-content: space-around; }
 
+.main {
+  margin-top: 7.7rem;
+  padding: 5rem; }
+
 .btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   display: inline-block;
@@ -78,3 +82,19 @@ body {
     border: 2px dashed #822E81;
     animation: LoadingDot 1s linear infinite;
     margin-right: 1rem; }
+
+.form {
+  font-size: 2rem;
+  width: 40%; }
+  .form__group {
+    display: flex;
+    width: 100%; }
+    .form__group:not(:last-child) {
+      margin-bottom: 2rem; }
+  .form__label {
+    width: 50%;
+    text-align: right;
+    text-transform: uppercase;
+    margin-right: 1rem; }
+  .form__input {
+    width: 50%; }
