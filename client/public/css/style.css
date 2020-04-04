@@ -52,6 +52,12 @@ body {
   margin-top: 7.7rem;
   padding: 5rem; }
 
+.stream__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; }
+
 .btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   display: inline-block;
@@ -85,16 +91,35 @@ body {
 
 .form {
   font-size: 2rem;
-  width: 40%; }
+  width: 100%;
+  text-align: center; }
   .form__group {
     display: flex;
     width: 100%; }
     .form__group:not(:last-child) {
       margin-bottom: 2rem; }
+  .form__message {
+    width: 50%;
+    margin-left: 2rem; }
   .form__label {
     width: 50%;
     text-align: right;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-right: 1rem; }
   .form__input {
-    width: 50%; }
+    width: 50%;
+    padding-left: 1.5rem; }
+  .form__error {
+    color: orangered;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 1rem; }
+
+.stream {
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 3px; }
+  .stream:not(:last-child) {
+    margin-bottom: 3rem; }

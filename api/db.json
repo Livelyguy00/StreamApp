@@ -1,0 +1,24 @@
+{
+  "streams": [
+    {
+      "title": "stream",
+      "description": "stream",
+      "id": 1
+    },
+    {
+      "title": "League of Legends",
+      "description": "We re gonna play LoL and get into Diamond Division",
+      "id": 2
+    },
+    {
+      "title": "LoL - Road to Diamond",
+      "description": "LoL - Road to Diamond",
+      "id": 3
+    },
+    {
+      "title": "CS:GO - Silver fun",
+      "description": "CS:GO - Silver fun",
+      "id": 4
+    }
+  ]
+}

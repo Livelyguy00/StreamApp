@@ -1,0 +1,9 @@
+.stream{
+  padding: 2rem;
+  background-color: $light-grey;
+  border-radius: 3px;
+
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}
