@@ -119,7 +119,53 @@ body {
 
 .stream {
   padding: 2rem;
-  background-color: #f7f7f7;
-  border-radius: 3px; }
+  background-image: linear-gradient(to bottom, #f7f7f7 0%, #f7f7f7 50%, #822E81 50%);
+  background-size: 100% 200%;
+  background-position: 100% 0;
+  border-radius: 3px;
+  display: flex;
+  transition: all .3s;
+  position: relative; }
   .stream:not(:last-child) {
     margin-bottom: 3rem; }
+  .stream__info {
+    display: flex;
+    justify-content: space-around;
+    color: #822E81;
+    width: 90%;
+    font-size: 2rem; }
+    .stream__info--title {
+      width: 50%;
+      text-align: left; }
+    .stream__info--desc {
+      width: 50%;
+      text-align: center;
+      font-size: 1.5rem; }
+  .stream__creator {
+    display: flex;
+    position: absolute;
+    right: 10rem; }
+    .stream__creator--icon {
+      transform: scale(3) translateY(3px);
+      color: #822E81;
+      margin-right: 4rem;
+      transition: all .2s; }
+      .stream__creator--icon:hover, .stream__creator--icon:active {
+        transform: scale(3.5) translateY(3px); }
+  .stream__enter {
+    color: #822E81;
+    width: 10%;
+    float: right;
+    text-align: right;
+    padding-right: 2rem; }
+    .stream__enter--icon {
+      color: #822E81;
+      transform: scale(4) translateY(2.5px);
+      transition: all .3s;
+      cursor: pointer; }
+      .stream__enter--icon:hover {
+        transform: translateX(0.7rem) scale(4) translateY(2.5px); }
+  .stream:hover, .stream:active {
+    background-position: 100% 100%; }
+    .stream:hover *, .stream:active * {
+      color: #f7f7f7; }

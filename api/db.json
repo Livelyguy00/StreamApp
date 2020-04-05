@@ -19,6 +19,12 @@
       "title": "CS:GO - Silver fun",
       "description": "CS:GO - Silver fun",
       "id": 4
+    },
+    {
+      "title": "Test stream",
+      "description": "Test stream with creator id",
+      "userId": "105226594036401776027",
+      "id": 5
     }
   ]
 }

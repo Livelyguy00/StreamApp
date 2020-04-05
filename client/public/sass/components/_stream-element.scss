@@ -1,9 +1,84 @@
 .stream{
   padding: 2rem;
-  background-color: $light-grey;
+  background-image: linear-gradient(
+    to bottom,
+    $light-grey 0%,
+    $light-grey 50%,
+    $primary 50%
+  );
+  background-size: 100% 200%;
+  background-position: 100% 0;
   border-radius: 3px;
+  display: flex;
+  transition: all .3s;
+  position: relative;
 
   &:not(:last-child){
     margin-bottom: 3rem;
+  }
+
+  &__info{
+    display: flex;
+    justify-content: space-around;
+    color: $primary;
+    width: 90%;
+    font-size: 2rem;
+
+    &--title{
+      width: 50%;
+      text-align: left;
+    }
+
+    &--desc{
+      width: 50%;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__creator{
+    display: flex;
+    position: absolute;
+    right: 10rem;
+
+    &--icon{
+      transform: scale(3) translateY(3px);
+      color: $primary;
+      margin-right: 4rem;
+      transition: all .2s;
+
+      &:hover,
+      &:active{
+        transform: scale(3.5) translateY(3px);
+      }
+    }
+  }
+
+  &__enter{
+    color: $primary;
+    width: 10%;
+    float: right;
+    text-align: right;
+    padding-right: 2rem;
+
+    &--icon{
+      color: $primary;
+      transform: scale(4) translateY(2.5px);
+      transition: all .3s;
+      cursor: pointer;
+
+      &:hover{
+        transform: translateX(0.7rem) scale(4) translateY(2.5px);
+      }
+    }
+  }
+
+  &:hover,
+  &:active{
+    background-position: 100% 100%;
+    
+    & *{
+      color: $light-grey;
+    }
   }
 }
