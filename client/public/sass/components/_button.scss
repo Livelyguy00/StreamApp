@@ -2,6 +2,7 @@
   &,&:link,&:visited{
     font-size: 1.6rem;
     display: inline-block;
+    width: auto;
     padding: 0.5rem 1rem;
     color: $light-grey;
     text-transform: uppercase;
@@ -14,6 +15,14 @@
 
   &--primary{
     background-color: $primary;
+  }
+
+  &--negative{
+    background-color: $negative;
+  }
+
+  &--neutral{
+    background-color: $light-grey;
   }
 
   &:hover,

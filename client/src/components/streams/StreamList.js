@@ -10,16 +10,26 @@ class StreamList extends React.Component {
     this.props.fetchStreams();
   }
 
-  streamCreator(stream){
+  streamMenagement(stream){
     if(stream.userId === this.props.CurrentUserId){
       return(
         <div className='stream__creator'>
-          <Link to='/streams/delete'>
+          <Link to={`/streams/delete/${stream.id}`}>
             <FontAwesomeIcon icon={faTrashAlt} className='stream__creator--icon'></FontAwesomeIcon>
           </Link>
-          <Link to='/streams/edit'>
+          <Link to={`/streams/edit/${stream.id}`}>
             <FontAwesomeIcon icon={faEdit} className='stream__creator--icon'></FontAwesomeIcon>
           </Link>
+        </div>
+      );
+    }
+  }
+
+  renderCreate() {
+    if(this.props.isLogged){
+      return(
+        <div className='u-text-right'>
+          <Link to='/streams/new' className='btn btn--primary'>Create a stream</Link>
         </div>
       );
     }
@@ -33,7 +43,7 @@ class StreamList extends React.Component {
             <div className='stream__info--title'>{stream.title}</div>
             <div className='stream__info--desc'>{stream.description}</div>
           </div>
-          { this.streamCreator(stream) }
+          { this.streamMenagement(stream) }
           <div className='stream__enter'>
             <Link to='/streams/show'>
               <FontAwesomeIcon icon={faPlayCircle} className='stream__enter--icon'></FontAwesomeIcon>
@@ -49,6 +59,7 @@ class StreamList extends React.Component {
       <div className='stream__list'>
         <h2 className='heading-secondary'>Streams</h2>
         { this.renderList() }
+        { this.renderCreate() }
       </div>
     );
   }
@@ -57,7 +68,8 @@ class StreamList extends React.Component {
 const mapStateToProps = (state) =>{
   return {
     streams: Object.values(state.streams),
-    CurrentUserId: state.auth.userId
+    CurrentUserId: state.auth.userId,
+    isLogged: state.auth.isSignedIn
   }
 }
 
