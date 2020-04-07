@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Modal = props => {
-  console.log(props);
   const renderWarning = () => {
     return(
-      <div className='modal'>
-        <div className='warning'>
-          You are not this stream creator! Create own stream to edit it!
+      <div onClick={ props.onDismiss } className='modal'>
+        <div onClick={(e) => e.stopPropagation()} className='warning u-absolute-centered'>
+          { props.text }
         </div>
       </div>
     )
@@ -15,17 +14,16 @@ const Modal = props => {
 
   const renderCard = () => {
     return(
-      <div className='modal'>
-        <div className='card'>
-          <h2 className='heading-secondary card__heading'>Delete Stream</h2>
-          <p className='paragraph card__content'>Are you sure you want to delete this stream?</p>
+      <div onClick={ props.onDismiss } className='modal'>
+        <div onClick={(e) => e.stopPropagation()} className='card u-absolute-centered'>
+          <h2 className='heading-secondary card__heading'>{ props.title }</h2>
+          <p className='paragraph card__content'>{ props.text }</p>
           <div className='card__stream'>
-            <h2 className='heading-secondary'>{this.props.stream.title}</h2>
+            <h2 className='heading-secondary'>{props.stream.title}</h2>
           </div>
-          <div className='card__btns'>
-            <button className='btn btn--negative' onClick={this.onDelete()}>Delete</button>
-            <button className='btn btn--neutral'>Cancel</button>
-          </div>
+          <div className='card__actions'>
+            { props.actions }
+          </div> 
         </div>
       </div>
     );
@@ -33,28 +31,30 @@ const Modal = props => {
 
   const fetchLoading = () => {
     return(
-      <div className='modal'>
-        <div className='loading-box u-text-center'>
-          <span className='loading-box__loading'>&nbsp;</span>
+      <div onClick={ props.onDismiss } className='modal'>
+        <div onClick={(e) => e.stopPropagation()} className='loading-box u-absolute-centered'>
+          <span className='loading-box__loading'></span>
+          <span>Loading...</span>
         </div>
       </div>
     )
   }
 
-  if(props.content === 'loading'){
+  if(props.type === 'loading'){
     return ReactDOM.createPortal(
       fetchLoading(),
       document.querySelector('#modal')
     )
   }
 
-  if(props.content === 'warning'){
+  if(props.type === 'warning'){
     return ReactDOM.createPortal(
       renderWarning(),
       document.querySelector('#modal')
     ) 
   }
-  else{
+
+  if(props.type === 'card'){
     return ReactDOM.createPortal(
       renderCard(),
       document.querySelector('#modal')

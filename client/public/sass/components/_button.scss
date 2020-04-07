@@ -14,16 +14,22 @@
   }
 
   &--primary{
-    background-color: $primary;
+    &,&:link,&:visited{
+      background-color: $primary;
+    }
   }
 
   &--negative{
-    background-color: $negative;
+    &,&:link,&:visited{
+      background-color: $negative;
+    }
   }
 
   &--neutral{
-    background-color: $light-grey;
-    color: $primary;
+    &,&:link,&:visited{
+      background-color: $light-grey;
+      color: $primary;
+    }
   }
 
   &:hover,

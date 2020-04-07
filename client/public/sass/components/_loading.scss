@@ -1,6 +1,7 @@
 .loading-box{
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &__loading{
     height: 3rem;
@@ -10,5 +11,4 @@
     animation: LoadingDot 1s linear infinite;
     margin-right: 1rem;
   }
-   
 }
