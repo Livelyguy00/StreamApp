@@ -1,26 +1,44 @@
 import React from 'react';
+import Modal from '../Modal';
 import { connect } from 'react-redux';
-import { deleteStream } from '../../actions/index';
+import { deleteStream, fetchStream } from '../../actions/index';
 
 class StreamDelete extends React.Component {
-  onDelete(){
-    deleteStream()
+  componentDidMount(){
+    this.props.fetchStream(this.props.match.params.id)
   }
-  
+
+  onDelete(){
+    console.log(this.props)
+  }
+
   render(){
-    return (
-      <div className='card'>
-        <h2 className='heading-secondary card__heading'>Delete Stream</h2>
-        <p className='paragraph card__content'>Are you sure you want to delete this stream?</p>
-        <div className='card__btns'>
-          <button className='btn btn--negative' onClick={this.onDelete()}>Delete</button>
-          <button className='btn btn--neutral'>Cancel</button>
-        </div>
-      </div>
-    );
+    if(!this.props.stream){
+      return(
+        <Modal content='loading'/>
+      );
+    }
+
+    if(this.props.signedUser !== this.props.stream.userId){
+      return(
+        <Modal content='warning'/>
+      );
+    }
+    else{
+      return(
+        <Modal content='card'/>
+      );
+    }
   }
 }
 
-export default connect(null, {
-  deleteStream
+const mapStateToProps = (state, ownProps) => {
+  return{
+    stream: state.streams[ownProps.match.params.id],
+    signedUser: state.auth.userId
+  }
+}
+
+export default connect(mapStateToProps, {
+  deleteStream, fetchStream
 })(StreamDelete);

@@ -1,0 +1,25 @@
+.card{
+  border: 1px solid $light-grey;
+  padding: 2rem;
+  display: inline-block;
+
+  &__heading{
+    margin-bottom: 1rem;
+  }
+
+  &__content{
+    padding: 1rem;
+  }
+
+  &__stream{
+    padding: 1rem;
+    border-bottom: 2px dashed $primary;
+    font-weight: 400;
+  }
+
+  &__btns{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
