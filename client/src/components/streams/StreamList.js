@@ -45,7 +45,7 @@ class StreamList extends React.Component {
           </div>
           { this.streamMenagement(stream) }
           <div className='stream__enter'>
-            <Link to='/streams/show'>
+            <Link to={`/streams/${ stream.id }`}>
               <FontAwesomeIcon icon={faPlayCircle} className='stream__enter--icon'></FontAwesomeIcon>
             </Link>
           </div>
